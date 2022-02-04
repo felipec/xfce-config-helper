@@ -2,6 +2,11 @@ shortcuts:
   commands:
     "<Super>Return": xfce4-terminal
     "<Super>b": chromium
+  wm:
+    left_workspace: "<Super>Left"
+    right_workspace: "<Super>Right"
+    up_workspace: "<Super>Up"
+    down_workspace: "<Super>Down"
 
 settings:
   xfwm4:

@@ -30,4 +30,17 @@ if shortcuts = $data['shortcuts']
     end
   end
 
+  # WM keyboard shortcuts
+  if actions = shortcuts['wm']
+    channel = 'xfce4-keyboard-shortcuts'
+    base = '/xfwm4/custom'
+
+    actions.each do |action,shortcut|
+      key = base + '/' + shortcut
+      action += '_key'
+      puts "set key #{channel}:#{key} = #{action}"
+      $xfconf.SetProperty(channel, key, action)
+    end
+  end
+
 end
