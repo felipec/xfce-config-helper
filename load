@@ -6,6 +6,7 @@ require 'dbus'
 $data = YAML.load(File.read(ARGV[0]))
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
 
+# General settings
 if settings = $data['settings']
   settings.each do |channel,list|
     list.each do |key, value|
@@ -13,4 +14,20 @@ if settings = $data['settings']
       $xfconf.SetProperty(channel, key, value)
     end
   end
+end
+
+if shortcuts = $data['shortcuts']
+
+  # Command keyboard shortcuts
+  if commands = shortcuts['commands']
+    channel = 'xfce4-keyboard-shortcuts'
+    base = '/commands/custom'
+
+    commands.each do |shortcut,command|
+      key = base + '/' + shortcut
+      puts "set key #{channel}:#{key} = #{command}"
+      $xfconf.SetProperty(channel, key, command)
+    end
+  end
+
 end

@@ -1,3 +1,8 @@
+shortcuts:
+  commands:
+    "<Super>Return": xfce4-terminal
+    "<Super>b": chromium
+
 settings:
   xfwm4:
     "/general/easy_click": "Super"
