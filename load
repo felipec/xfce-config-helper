@@ -6,12 +6,16 @@ require 'dbus'
 $data = YAML.load(File.read(ARGV[0]))
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
 
+def set(channel, key, value)
+  puts "set key #{channel}:#{key} = #{value}"
+  $xfconf.SetProperty(channel, key, value)
+end
+
 # General settings
 if settings = $data['settings']
   settings.each do |channel,list|
     list.each do |key, value|
-      puts "set key #{channel}:#{key} = #{value}"
-      $xfconf.SetProperty(channel, key, value)
+      set(channel, key, value)
     end
   end
 end
@@ -25,8 +29,7 @@ if shortcuts = $data['shortcuts']
 
     commands.each do |shortcut,command|
       key = base + '/' + shortcut
-      puts "set key #{channel}:#{key} = #{command}"
-      $xfconf.SetProperty(channel, key, command)
+      set(channel, key, command)
     end
   end
 
@@ -38,8 +41,7 @@ if shortcuts = $data['shortcuts']
     actions.each do |action,shortcut|
       key = base + '/' + shortcut
       action += '_key'
-      puts "set key #{channel}:#{key} = #{action}"
-      $xfconf.SetProperty(channel, key, action)
+      set(channel, key, action)
     end
   end
 
@@ -58,13 +60,11 @@ if panels = $data['panels']
     plugins.each_with_index do |(name,params),plugin_id|
       plugin_base = "/plugins/plugin-#{plugin_id + 1}"
 
-      puts "set key #{channel}:#{plugin_base} = #{name}"
-      $xfconf.SetProperty(channel, plugin_base, name)
+      set(channel, plugin_base, name)
       next unless params
 
       params.each do |param,value|
-        puts "set key #{channel}:#{plugin_base}/#{param} = #{value}"
-        $xfconf.SetProperty(channel, plugin_base + '/' + param, value)
+        set(channel, plugin_base + '/' + param, value)
       end
     end
 
@@ -72,14 +72,12 @@ if panels = $data['panels']
 
     panel['plugin-ids'] = (1..plugins.length).to_a
     panel.each do |key,value|
-      puts "set key #{channel}:#{panel_base}/#{key} = #{value}"
-      $xfconf.SetProperty(channel, panel_base + '/' + key, value)
+      set(channel, panel_base + '/' + key, value)
     end
   end
 
   value = (1..panels.length).to_a
-  puts "set key #{channel}:#{base} = #{value}"
-  $xfconf.SetProperty(channel, base, value)
+  set(channel, base, value)
 
   system('xfce4-panel', '--restart')
 end
