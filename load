@@ -6,10 +6,11 @@ require 'dbus'
 $data = YAML.load(File.read(ARGV[0]))
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
 
-settings = $data['settings']
-settings.each do |channel,list|
-  list.each do |key, value|
-    puts "set key #{channel}:#{key} = #{value}"
-    $xfconf.SetProperty(channel, key, value)
+if settings = $data['settings']
+  settings.each do |channel,list|
+    list.each do |key, value|
+      puts "set key #{channel}:#{key} = #{value}"
+      $xfconf.SetProperty(channel, key, value)
+    end
   end
 end
