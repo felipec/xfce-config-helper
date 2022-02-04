@@ -6,7 +6,8 @@ require 'dbus'
 $data = YAML.load(File.read(ARGV[0]))
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
 
-def set(channel, key, value)
+def set(channel, key, value, base: nil)
+  key = base + '/' + key if base
   puts "#{channel}:#{key} = #{value}"
   $xfconf.SetProperty(channel, key, value)
 end
@@ -28,8 +29,7 @@ if shortcuts = $data['shortcuts']
     base = '/commands/custom'
 
     commands.each do |shortcut,command|
-      key = base + '/' + shortcut
-      set(channel, key, command)
+      set(channel, shortcut, command, base: base)
     end
   end
 
@@ -39,9 +39,8 @@ if shortcuts = $data['shortcuts']
     base = '/xfwm4/custom'
 
     actions.each do |action,shortcut|
-      key = base + '/' + shortcut
       action += '_key'
-      set(channel, key, action)
+      set(channel, shortcut, action, base: base)
     end
   end
 
@@ -64,7 +63,7 @@ if panels = $data['panels']
       next unless params
 
       params.each do |param,value|
-        set(channel, plugin_base + '/' + param, value)
+        set(channel, param, value, base: plugin_base)
       end
     end
 
@@ -72,7 +71,7 @@ if panels = $data['panels']
 
     panel['plugin-ids'] = (1..plugins.length).to_a
     panel.each do |key,value|
-      set(channel, panel_base + '/' + key, value)
+      set(channel, key, value, base: panel_base)
     end
   end
 
