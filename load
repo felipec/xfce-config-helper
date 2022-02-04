@@ -25,22 +25,15 @@ if shortcuts = $data['shortcuts']
 
   # Command keyboard shortcuts
   if commands = shortcuts['commands']
-    channel = 'xfce4-keyboard-shortcuts'
-    base = '/commands/custom'
-
     commands.each do |shortcut,command|
-      set(channel, shortcut, command, base: base)
+      set('xfce4-keyboard-shortcuts', shortcut, command, base: '/commands/custom')
     end
   end
 
   # WM keyboard shortcuts
   if actions = shortcuts['wm']
-    channel = 'xfce4-keyboard-shortcuts'
-    base = '/xfwm4/custom'
-
     actions.each do |action,shortcut|
-      action += '_key'
-      set(channel, shortcut, action, base: base)
+      set('xfce4-keyboard-shortcuts', shortcut, action + '_key', base: '/xfwm4/custom')
     end
   end
 
