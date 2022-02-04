@@ -44,3 +44,42 @@ if shortcuts = $data['shortcuts']
   end
 
 end
+
+# Panels
+if panels = $data['panels']
+  channel = 'xfce4-panel'
+  base = '/panels'
+
+  $xfconf.ResetProperty(channel, '/panels', true)
+  $xfconf.ResetProperty(channel, '/plugins', true)
+
+  panels.each_with_index do |panel,panel_id|
+    plugins = panel.delete('plugins')
+    plugins.each_with_index do |(name,params),plugin_id|
+      plugin_base = "/plugins/plugin-#{plugin_id + 1}"
+
+      puts "set key #{channel}:#{plugin_base} = #{name}"
+      $xfconf.SetProperty(channel, plugin_base, name)
+      next unless params
+
+      params.each do |param,value|
+        puts "set key #{channel}:#{plugin_base}/#{param} = #{value}"
+        $xfconf.SetProperty(channel, plugin_base + '/' + param, value)
+      end
+    end
+
+    panel_base = "/panels/panel-#{panel_id + 1}"
+
+    panel['plugin-ids'] = (1..plugins.length).to_a
+    panel.each do |key,value|
+      puts "set key #{channel}:#{panel_base}/#{key} = #{value}"
+      $xfconf.SetProperty(channel, panel_base + '/' + key, value)
+    end
+  end
+
+  value = (1..panels.length).to_a
+  puts "set key #{channel}:#{base} = #{value}"
+  $xfconf.SetProperty(channel, base, value)
+
+  system('xfce4-panel', '--restart')
+end

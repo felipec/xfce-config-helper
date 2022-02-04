@@ -16,3 +16,9 @@ settings:
     "/general/SaveOnExit": false
   xfce4-desktop:
     "/desktop-icons/style": 0
+
+panels:
+- plugins:
+  - - whiskermenu
+  - - tasklist
+  - - pager
