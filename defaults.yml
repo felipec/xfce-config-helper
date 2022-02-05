@@ -1,0 +1,143 @@
+settings:
+  xsettings:
+    "/Gdk/WindowScalingFactor": 1
+    "/Gtk/ButtonImages": true
+    "/Gtk/CanChangeAccels": false
+    "/Gtk/ColorPalette": black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger
+      blue:pink:light green:gray10:gray30:gray75:gray90
+    "/Gtk/CursorThemeName": ''
+    "/Gtk/CursorThemeSize": 0
+    "/Gtk/DecorationLayout": menu:minimize,maximize,close
+    "/Gtk/DialogsUseHeader": true
+    "/Gtk/FontName": Sans 10
+    "/Gtk/IconSizes": ''
+    "/Gtk/KeyThemeName": ''
+    "/Gtk/MenuBarAccel": F10
+    "/Gtk/MenuImages": true
+    "/Gtk/MonospaceFontName": Monospace 10
+    "/Gtk/TitlebarMiddleClick": lower
+    "/Gtk/ToolbarIconSize": 3
+    "/Gtk/ToolbarStyle": icons
+    "/Net/CursorBlink": true
+    "/Net/CursorBlinkTime": 1200
+    "/Net/DndDragThreshold": 8
+    "/Net/DoubleClickDistance": 5
+    "/Net/DoubleClickTime": 400
+    "/Net/EnableEventSounds": false
+    "/Net/EnableInputFeedbackSounds": false
+    "/Net/IconThemeName": Adwaita
+    "/Net/SoundThemeName": default
+    "/Net/ThemeName": Adwaita
+    "/Xft/Antialias": 1
+    "/Xft/HintStyle": hintfull
+    "/Xft/Hinting": -1
+    "/Xft/RGBA": none
+  xfwm4:
+    "/general/activate_action": bring
+    "/general/borderless_maximize": true
+    "/general/box_move": false
+    "/general/box_resize": false
+    "/general/button_layout": O|SHMC
+    "/general/button_offset": 0
+    "/general/button_spacing": 0
+    "/general/click_to_focus": true
+    "/general/cycle_apps_only": false
+    "/general/cycle_draw_frame": true
+    "/general/cycle_hidden": true
+    "/general/cycle_minimized": false
+    "/general/cycle_minimum": true
+    "/general/cycle_preview": true
+    "/general/cycle_raise": false
+    "/general/cycle_tabwin_mode": 0
+    "/general/cycle_workspaces": false
+    "/general/double_click_action": maximize
+    "/general/double_click_distance": 5
+    "/general/double_click_time": 250
+    "/general/easy_click": Alt
+    "/general/focus_delay": 250
+    "/general/focus_hint": true
+    "/general/focus_new": true
+    "/general/frame_border_top": 0
+    "/general/frame_opacity": 100
+    "/general/full_width_title": true
+    "/general/horiz_scroll_opacity": false
+    "/general/inactive_opacity": 100
+    "/general/maximized_offset": 0
+    "/general/mousewheel_rollup": true
+    "/general/move_opacity": 100
+    "/general/placement_mode": center
+    "/general/placement_ratio": 20
+    "/general/popup_opacity": 100
+    "/general/prevent_focus_stealing": false
+    "/general/raise_delay": 250
+    "/general/raise_on_click": true
+    "/general/raise_on_focus": false
+    "/general/raise_with_any_button": true
+    "/general/repeat_urgent_blink": false
+    "/general/resize_opacity": 100
+    "/general/scroll_workspaces": true
+    "/general/shadow_delta_height": 0
+    "/general/shadow_delta_width": 0
+    "/general/shadow_delta_x": 0
+    "/general/shadow_delta_y": -3
+    "/general/shadow_opacity": 50
+    "/general/show_app_icon": false
+    "/general/show_dock_shadow": true
+    "/general/show_frame_shadow": true
+    "/general/show_popup_shadow": false
+    "/general/snap_resist": false
+    "/general/snap_to_border": true
+    "/general/snap_to_windows": false
+    "/general/snap_width": 10
+    "/general/theme": Default
+    "/general/tile_on_move": true
+    "/general/title_alignment": center
+    "/general/title_font": Sans Bold 9
+    "/general/title_horizontal_offset": 0
+    "/general/title_shadow_active": 'false'
+    "/general/title_shadow_inactive": 'false'
+    "/general/title_vertical_offset_active": 0
+    "/general/title_vertical_offset_inactive": 0
+    "/general/titleless_maximize": false
+    "/general/toggle_workspaces": false
+    "/general/unredirect_overlays": true
+    "/general/urgent_blink": false
+    "/general/use_compositing": true
+    "/general/vblank_mode": auto
+    "/general/workspace_count": 4
+    "/general/workspace_names":
+    - Workspace 1
+    - Workspace 2
+    - Workspace 3
+    - Workspace 4
+    "/general/wrap_cycle": true
+    "/general/wrap_layout": true
+    "/general/wrap_resistance": 10
+    "/general/wrap_windows": true
+    "/general/wrap_workspaces": false
+    "/general/zoom_desktop": true
+    "/general/zoom_pointer": true
+  xfce4-session:
+    "/general/FailsafeSessionName": Failsafe
+    "/general/LockCommand": ''
+    "/general/SaveOnExit": true
+    "/general/SessionName": Default
+    "/shutdown/LockScreen": true
+  keyboards:
+    "/Default/Numlock": false
+  xfce4-power-manager:
+    "/xfce4-power-manager/brightness-switch": 0
+    "/xfce4-power-manager/brightness-switch-restore-on-exit": 1
+    "/xfce4-power-manager/show-tray-icon": false
+    "/xfce4-power-manager/battery-button-action": 0
+    "/xfce4-power-manager/critical-power-action": 0
+    "/xfce4-power-manager/critical-power-level": 10
+    "/xfce4-power-manager/dpms-enabled": true
+    "/xfce4-power-manager/general-notification": false
+    "/xfce4-power-manager/handle-brightness-keys": false
+    "/xfce4-power-manager/hibernate-button-action": 0
+    "/xfce4-power-manager/inactivity-sleep-mode-on-ac": 1
+    "/xfce4-power-manager/inactivity-sleep-mode-on-battery": 2
+    "/xfce4-power-manager/lock-screen-suspend-hibernate": true
+    "/xfce4-power-manager/power-button-action": 0
+    "/xfce4-power-manager/sleep-button-action": 0

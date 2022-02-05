@@ -23,6 +23,7 @@ $ignore = %w[
 ]
 
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
+$defaults = YAML.load(File.read('defaults.yml'))
 
 $settings = {}
 
@@ -30,6 +31,8 @@ channels = $xfconf.ListChannels()
 
 channels.each do |channel|
   props = $xfconf.GetAllProperties(channel, '/')
+  defaults = $defaults['settings'][channel]
+  props.reject! { |k, v| defaults[k] == v } if defaults
   props.reject! { |k, v| ('/' + channel + k).start_with?(*$ignore) }
   next if props.empty?
   $settings[channel] = props.sort.to_h
