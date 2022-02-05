@@ -3,6 +3,25 @@
 require 'yaml'
 require 'dbus'
 
+$ignore = %w[
+  /xfce4-keyboard-shortcuts/commands/default
+  /xfce4-keyboard-shortcuts/commands/custom/override
+  /xfce4-keyboard-shortcuts/xfwm4/default
+  /xfce4-keyboard-shortcuts/xfwm4/custom/override
+  /xfce4-keyboard-shortcuts/providers
+  /xfce4-session/sessions/Failsafe
+  /xfce4-desktop/backdrop
+  /xfce4-appfinder/actions
+  /xfce4-notifyd/applications/known_applications
+  /displays
+  /xfce4-desktop/last
+  /xfce4-appfinder/last
+  /xfce4-settings-manager/last
+  /xfce4-settings-editor/last
+  /xfce4-mime-settings/last
+  /thunar/last
+]
+
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
 
 $settings = {}
@@ -11,6 +30,8 @@ channels = $xfconf.ListChannels()
 
 channels.each do |channel|
   props = $xfconf.GetAllProperties(channel, '/')
+  props.reject! { |k, v| ('/' + channel + k).start_with?(*$ignore) }
+  next if props.empty?
   $settings[channel] = props.sort.to_h
 end
 
