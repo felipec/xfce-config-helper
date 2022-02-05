@@ -50,20 +50,15 @@ if panels = $data['panels']
     plugins = panel.delete('plugins')
     plugins.each_with_index do |(name,params),plugin_id|
       plugin_base = "/plugins/plugin-#{plugin_id + 1}"
-
       set(channel, plugin_base, name)
-      next unless params
-
       set_each(channel, params, base: plugin_base)
     end
 
     panel['plugin-ids'] = (1..plugins.length).to_a
-    panel_base = "/panels/panel-#{panel_id + 1}"
-    set_each(channel, panel, base: panel_base)
+    set_each(channel, panel, base: "/panels/panel-#{panel_id + 1}")
   end
 
-  value = (1..panels.length).to_a
-  set(channel, base, value)
+  set(channel, base, (1..panels.length).to_a)
 
   system('xfce4-panel', '--restart')
 end
