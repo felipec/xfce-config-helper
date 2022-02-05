@@ -26,11 +26,29 @@ $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfco
 $defaults = YAML.load(File.read('defaults.yml'))
 
 $settings = {}
+$shortcuts = { 'commands' => {}, 'wm' => {} }
 
 channels = $xfconf.ListChannels()
 
 channels.each do |channel|
   props = $xfconf.GetAllProperties(channel, '/')
+  if channel == 'xfce4-keyboard-shortcuts'
+    defaults = $defaults['shortcuts']
+    props.each do |k, v|
+      case k
+      when %r{^/commands/custom/(.+)}
+        next if $1 == 'override'
+        next if defaults['commands'][$1] == v
+        $shortcuts['commands'][$1] = v
+      when %r{^/xfwm4/custom/(.+)}
+        next if $1 == 'override'
+        t = v.slice(..-5)
+        next if defaults['wm'][t] == $1
+        $shortcuts['wm'][t] = $1
+      end
+    end
+    next
+  end
   defaults = $defaults['settings'][channel]
   props.reject! { |k, v| defaults[k] == v } if defaults
   props.reject! { |k, v| ('/' + channel + k).start_with?(*$ignore) }
@@ -38,4 +56,4 @@ channels.each do |channel|
   $settings[channel] = props.sort.to_h
 end
 
-puts YAML.dump({ 'settings' => $settings })
+puts YAML.dump({ 'shortcuts' => $shortcuts, 'settings' => $settings })

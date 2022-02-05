@@ -1,3 +1,90 @@
+shortcuts:
+  commands:
+    "<Alt>F1": xfce4-popup-applicationsmenu
+    "<Alt>F2": xfce4-appfinder --collapsed
+    "<Alt>F2/startup-notify": true
+    "<Alt>F3": xfce4-appfinder
+    "<Alt>F3/startup-notify": true
+    "<Primary><Alt>Delete": xfce4-session-logout
+    "<Primary><Alt>l": xflock4
+    "<Primary><Alt>t": exo-open --launch TerminalEmulator
+    XF86Display: xfce4-display-settings --minimal
+    "<Super>p": xfce4-display-settings --minimal
+    "<Primary>Escape": xfdesktop --menu
+    XF86WWW: exo-open --launch WebBrowser
+    HomePage: exo-open --launch WebBrowser
+    XF86Mail: exo-open --launch MailReader
+    Print: xfce4-screenshooter
+    "<Alt>Print": xfce4-screenshooter -w
+    "<Shift>Print": xfce4-screenshooter -r
+    "<Super>e": thunar
+    "<Primary><Alt>f": thunar
+    "<Primary><Alt>Escape": xkill
+    "<Primary><Shift>Escape": xfce4-taskmanager
+    "<Super>r": xfce4-appfinder -c
+    "<Super>r/startup-notify": true
+  wm:
+    add_workspace: "<Alt>Insert"
+    cancel: Escape
+    left: Left
+    right: Right
+    up: Up
+    down: Down
+    cycle_windows: "<Alt>Tab"
+    cycle_reverse_windows: "<Alt><Shift>Tab"
+    del_workspace: "<Alt>Delete"
+    down_workspace: "<Primary><Alt>Down"
+    left_workspace: "<Primary><Alt>Left"
+    lower_window: "<Shift><Alt>Page_Down"
+    close_window: "<Alt>F4"
+    stick_window: "<Alt>F6"
+    move_window: "<Alt>F7"
+    resize_window: "<Alt>F8"
+    hide_window: "<Alt>F9"
+    maximize_window: "<Alt>F10"
+    fullscreen: "<Alt>F11"
+    above: "<Alt>F12"
+    move_window_left: "<Primary><Shift><Alt>Left"
+    move_window_next_workspace: "<Primary><Alt>End"
+    move_window_prev_workspace: "<Primary><Alt>Home"
+    move_window_right: "<Primary><Shift><Alt>Right"
+    move_window_up: "<Primary><Shift><Alt>Up"
+    move_window_workspace_1: "<Primary><Alt>KP_1"
+    move_window_workspace_2: "<Primary><Alt>KP_2"
+    move_window_workspace_3: "<Primary><Alt>KP_3"
+    move_window_workspace_4: "<Primary><Alt>KP_4"
+    move_window_workspace_5: "<Primary><Alt>KP_5"
+    move_window_workspace_6: "<Primary><Alt>KP_6"
+    move_window_workspace_7: "<Primary><Alt>KP_7"
+    move_window_workspace_8: "<Primary><Alt>KP_8"
+    move_window_workspace_9: "<Primary><Alt>KP_9"
+    popup_menu: "<Alt>space"
+    raise_window: "<Shift><Alt>Page_Up"
+    right_workspace: "<Primary><Alt>Right"
+    show_desktop: "<Primary><Alt>d"
+    up_workspace: "<Primary><Alt>Up"
+    switch_window: "<Super>Tab"
+    workspace_1: "<Primary>F1"
+    workspace_2: "<Primary>F2"
+    workspace_3: "<Primary>F3"
+    workspace_4: "<Primary>F4"
+    workspace_5: "<Primary>F5"
+    workspace_6: "<Primary>F6"
+    workspace_7: "<Primary>F7"
+    workspace_8: "<Primary>F8"
+    workspace_9: "<Primary>F9"
+    workspace_10: "<Primary>F10"
+    workspace_11: "<Primary>F11"
+    workspace_12: "<Primary>F12"
+    tile_left: "<Super>KP_Left"
+    tile_right: "<Super>KP_Right"
+    tile_down: "<Super>KP_Up"
+    tile_up: "<Super>KP_Down"
+    tile_up_right: "<Super>KP_Page_Up"
+    tile_up_left: "<Super>KP_Home"
+    tile_down_left: "<Super>KP_End"
+    tile_down_right: "<Super>KP_Next"
+
 settings:
   xsettings:
     "/Gdk/WindowScalingFactor": 1
