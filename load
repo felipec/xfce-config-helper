@@ -13,6 +13,7 @@ def set(channel, key, value, base: nil)
 end
 
 def set_each(channel, list, base: nil)
+  return unless list
   list.each do |key,value|
     set(channel, key, value, base: base)
   end
@@ -28,15 +29,12 @@ end
 if shortcuts = $data['shortcuts']
 
   # Command keyboard shortcuts
-  if commands = shortcuts['commands']
-    set_each('xfce4-keyboard-shortcuts', commands, base: '/commands/custom')
-  end
+  set_each('xfce4-keyboard-shortcuts', shortcuts['commands'], base: '/commands/custom')
 
   # WM keyboard shortcuts
-  if actions = shortcuts['wm']
-    actions = actions.invert.transform_values { |action| action + '_key' }
-    set_each('xfce4-keyboard-shortcuts', actions, base: '/xfwm4/custom')
-  end
+  actions = shortcuts['wm'] || {}
+  list = actions.invert.transform_values { |action| action + '_key' }
+  set_each('xfce4-keyboard-shortcuts', list, base: '/xfwm4/custom')
 
 end
 
