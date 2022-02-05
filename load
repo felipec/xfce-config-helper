@@ -12,12 +12,16 @@ def set(channel, key, value, base: nil)
   $xfconf.SetProperty(channel, key, value)
 end
 
+def set_each(channel, list, base: nil)
+  list.each do |key,value|
+    set(channel, key, value, base: base)
+  end
+end
+
 # General settings
 if settings = $data['settings']
   settings.each do |channel,list|
-    list.each do |key, value|
-      set(channel, key, value)
-    end
+    set_each(channel, list)
   end
 end
 
@@ -25,16 +29,13 @@ if shortcuts = $data['shortcuts']
 
   # Command keyboard shortcuts
   if commands = shortcuts['commands']
-    commands.each do |shortcut,command|
-      set('xfce4-keyboard-shortcuts', shortcut, command, base: '/commands/custom')
-    end
+    set_each('xfce4-keyboard-shortcuts', commands, base: '/commands/custom')
   end
 
   # WM keyboard shortcuts
   if actions = shortcuts['wm']
-    actions.each do |action,shortcut|
-      set('xfce4-keyboard-shortcuts', shortcut, action + '_key', base: '/xfwm4/custom')
-    end
+    actions = actions.invert.transform_values { |action| action + '_key' }
+    set_each('xfce4-keyboard-shortcuts', actions, base: '/xfwm4/custom')
   end
 
 end
@@ -55,17 +56,12 @@ if panels = $data['panels']
       set(channel, plugin_base, name)
       next unless params
 
-      params.each do |param,value|
-        set(channel, param, value, base: plugin_base)
-      end
+      set_each(channel, params, base: plugin_base)
     end
-
-    panel_base = "/panels/panel-#{panel_id + 1}"
 
     panel['plugin-ids'] = (1..plugins.length).to_a
-    panel.each do |key,value|
-      set(channel, key, value, base: panel_base)
-    end
+    panel_base = "/panels/panel-#{panel_id + 1}"
+    set_each(channel, panel, base: panel_base)
   end
 
   value = (1..panels.length).to_a
