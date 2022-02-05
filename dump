@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'dbus'
+
+$xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
+
+$settings = {}
+
+channels = $xfconf.ListChannels()
+
+channels.each do |channel|
+  props = $xfconf.GetAllProperties(channel, '/')
+  $settings[channel] = props.sort.to_h
+end
+
+puts YAML.dump({ 'settings' => $settings })
