@@ -77,4 +77,9 @@ channels.each do |channel|
   end
 end
 
-puts YAML.dump({ 'shortcuts' => $shortcuts, 'settings' => $settings, 'panels' => $panels })
+config = {
+  'shortcuts' => $shortcuts,
+  'settings' => $settings,
+  'panels' => $panels,
+}
+puts YAML.dump(config)
