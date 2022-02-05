@@ -27,6 +27,7 @@ $defaults = YAML.load(File.read('defaults.yml'))
 
 $settings = {}
 $shortcuts = { 'commands' => {}, 'wm' => {} }
+$panels = []
 
 channels = $xfconf.ListChannels()
 
@@ -48,6 +49,26 @@ channels.each do |channel|
       end
     end
     next
+  elsif channel == 'xfce4-panel'
+    panels = Hash.new { |h,k| h[k] = Hash.new }
+    plugins = Hash.new { |h,k| h[k] = Array.new }
+    props.each do |k, v|
+      case k
+      when %r{^/panels/panel-(\d+)/(.+)$}
+        panels[$1.to_i][$2] = v
+      when %r{^/plugins/plugin-(\d+)$}
+        plugins[$1.to_i][0] = v
+      when %r{^/plugins/plugin-(\d+)/(.+)$}
+        plugins[$1.to_i][1] ||= Hash.new
+        plugins[$1.to_i][1][$2] = v
+      end
+    end
+    panels.each_value do |panel|
+      plugin_ids = panel.delete('plugin-ids')
+      panel['plugins'] = plugin_ids.map { |id| plugins[id] }
+      $panels << panel
+    end
+    next
   end
   defaults = $defaults['settings'][channel]
   props.reject! { |k, v| defaults[k] == v } if defaults
@@ -56,4 +77,4 @@ channels.each do |channel|
   $settings[channel] = props.sort.to_h
 end
 
-puts YAML.dump({ 'shortcuts' => $shortcuts, 'settings' => $settings })
+puts YAML.dump({ 'shortcuts' => $shortcuts, 'settings' => $settings, 'panels' => $panels })
