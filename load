@@ -39,13 +39,6 @@ def set_each(channel, list, base: nil)
   end
 end
 
-# General settings
-if settings = $data['settings']
-  settings.each do |channel,list|
-    set_each(channel, list)
-  end
-end
-
 if shortcuts = $data['shortcuts']
 
   # Command keyboard shortcuts
@@ -83,4 +76,11 @@ if panels = $data['panels']
   set('xfce4-panel', '/panels', (1..panels.length).to_a)
 
   system('xfce4-panel', '--restart')
+end
+
+# General settings
+if settings = $data['settings']
+  settings.each do |channel,list|
+    set_each(channel, list)
+  end
 end
