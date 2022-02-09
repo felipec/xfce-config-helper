@@ -67,7 +67,7 @@ Even the configuration of the panels is understandable, as opposed to the XML on
 To load a configuration:
 
 ```yaml
-./load config.yml
+xfconf-load config.yml
 ```
 
 The configuration is loaded using D-Bus, so it's immediately activated.
@@ -75,7 +75,7 @@ The configuration is loaded using D-Bus, so it's immediately activated.
 To store your current current configuration:
 
 ```yaml
-./dump > config.yml
+xfconf-dump > config.yml
 ```
 
 Known defaults will be skipped in order to better visualize the actual configuration.
