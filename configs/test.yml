@@ -1,3 +1,4 @@
+---
 shortcuts:
   commands:
     "<Super>Return": xfce4-terminal
@@ -7,16 +8,14 @@ shortcuts:
     right_workspace: "<Super>Right"
     up_workspace: "<Super>Up"
     down_workspace: "<Super>Down"
-
 settings:
   xfwm4:
-    "/general/easy_click": "Super"
+    "/general/easy_click": Super
     "/general/cycle_tabwin_mode": 1
   xfce4-session:
     "/general/SaveOnExit": false
   xfce4-desktop:
     "/desktop-icons/style": 0
-
 panels:
 - plugins:
   - - whiskermenu
