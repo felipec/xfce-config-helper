@@ -3,6 +3,10 @@
 require 'yaml'
 require 'dbus'
 
+YAML.add_domain_type('xfconf', 'uint') do |_, v|
+  DBus.variant('u', v)
+end
+
 $data = YAML.load(File.read(ARGV[0]))
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
 
