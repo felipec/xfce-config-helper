@@ -14,7 +14,8 @@ shortcuts:
 settings:
   xfwm4:
     "/general/easy_click": Super
-    "/general/cycle_tabwin_mode": 1
+    "/general/cycle_tabwin_mode": 0
+    "/general/cycle_preview": false
   xfce4-session:
     "/compat/LaunchGNOME": true
   xfce4-panel:
