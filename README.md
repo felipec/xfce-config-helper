@@ -79,3 +79,13 @@ To store your current current configuration:
 ```
 
 Known defaults will be skipped in order to better visualize the actual configuration.
+
+## Prerequisites
+
+To use you will need `ruby` and the `ruby-dbus` gem, which you can install with:
+
+```sh
+gem install ruby-dbus
+```
+
+*Note*: right now `ruby-dbus` has a bug, so you need to manually install `rexml` as well.
