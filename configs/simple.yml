@@ -1,0 +1,49 @@
+---
+shortcuts:
+  commands:
+    "<Super>Return": exo-open --launch TerminalEmulator
+  wm:
+    left_workspace: "<Super>Left"
+    right_workspace: "<Super>Right"
+    up_workspace: "<Super>Up"
+    down_workspace: "<Super>Down"
+    workspace_1: "<Super>1"
+    workspace_2: "<Super>2"
+    workspace_3: "<Super>3"
+    workspace_4: "<Super>4"
+settings:
+  xfwm4:
+    "/general/easy_click": Super
+    "/general/cycle_tabwin_mode": 1
+  xfce4-session:
+    "/compat/LaunchGNOME": true
+  xfce4-panel:
+    "/panels/dark-mode": true
+panels:
+- size: 30
+  length: 100
+  length-adjust: false
+  position: p=10;x=0;y=0
+  position-locked: true
+  icon-size: 16
+  plugins:
+  - - whiskermenu
+  - - tasklist
+  - - separator
+    - expand: true
+      style: 0
+  - - windowmenu
+  - - separator
+    - style: 0
+  - - pager
+    - rows: 2
+  - - separator
+    - style: 0
+  - - systray
+    - icon-size: 16
+      square-icons: true
+  - - pulseaudio
+  - - power-manager-plugin
+  - - notification-plugin
+  - - clock
+    - digital-format: "%R"
