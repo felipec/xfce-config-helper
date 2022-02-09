@@ -8,8 +8,13 @@ $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfco
 
 def set(channel, key, value, base: nil)
   key = base + '/' + key if base
-  puts "#{channel}:#{key} = #{value}"
-  $xfconf.SetProperty(channel, key, value)
+  if not value.nil?
+    puts "#{channel}:#{key} = #{value}"
+    $xfconf.SetProperty(channel, key, value)
+  else
+    puts "del #{channel}:#{key}"
+    $xfconf.ResetProperty(channel, key, false)
+  end
 end
 
 def set_each(channel, list, base: nil)
@@ -34,6 +39,11 @@ if shortcuts = $data['shortcuts']
   # WM keyboard shortcuts
   actions = shortcuts['wm'] || {}
   list = actions.invert.map { |k, v| [ '/xfwm4/custom/' + k, v + '_key' ] }.to_h
+
+  current = $xfconf.GetAllProperties('xfce4-keyboard-shortcuts', '/xfwm4/custom')
+  clear = current.filter_map { |k,v| list.has_value?(v) && [k, nil] }.to_h
+  list.merge!(clear) { |_,cur,_| cur }
+
   set_each('xfce4-keyboard-shortcuts', list)
 
 end
