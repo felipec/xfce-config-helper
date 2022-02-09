@@ -1,7 +1,13 @@
 #!/usr/bin/env ruby
 
 require 'yaml'
-require 'dbus'
+
+begin
+  require 'dbus'
+rescue LoadError
+  $stderr.puts 'ruby-dbus needs to be installed'
+  exit 1
+end
 
 $ignore = %w[
   /xfce4-keyboard-shortcuts/commands/default

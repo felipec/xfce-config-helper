@@ -1,7 +1,18 @@
 #!/usr/bin/env ruby
 
 require 'yaml'
-require 'dbus'
+
+begin
+  require 'dbus'
+rescue LoadError
+  $stderr.puts 'ruby-dbus needs to be installed'
+  exit 1
+end
+
+if !ARGV[0]
+  puts "usage: #{$0} config.yml"
+  exit 1
+end
 
 YAML.add_domain_type('xfconf', 'uint') do |_, v|
   DBus.variant('u', v)
