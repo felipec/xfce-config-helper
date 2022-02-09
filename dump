@@ -28,8 +28,12 @@ $ignore = %w[
   /thunar/last
 ]
 
+prefixes = [ '/usr', ENV['HOME'] + '/.local' ]
+$prefix = prefixes.find { |e| File.exists?(e + '/share/xfconf-helper/defaults.yml') }
+raise "Couldn't find defaults" unless $prefix
+
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
-$defaults = YAML.load(File.read('defaults.yml'))
+$defaults = YAML.load(File.read($prefix + '/share/xfconf-helper/defaults.yml'))
 
 $settings = {}
 $shortcuts = { 'commands' => {}, 'wm' => {} }
