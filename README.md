@@ -89,3 +89,13 @@ gem install ruby-dbus
 ```
 
 *Note*: right now `ruby-dbus` has a bug, so you need to manually install `rexml` as well.
+
+## Install
+
+Simply run `make install` (and make sure `~/.local/bin` is in your `$PATH`).
+
+If you are using Arch Linux, you can install xfce-config-helper from AUR.
+
+```sh
+yay -Sy xfce-config-helper
+```
