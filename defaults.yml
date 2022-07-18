@@ -228,3 +228,16 @@ settings:
     "/xfce4-power-manager/lock-screen-suspend-hibernate": true
     "/xfce4-power-manager/power-button-action": 0
     "/xfce4-power-manager/sleep-button-action": 0
+  xfce4-notifyd:
+    "/applications/muted_applications": []
+    "/do-fadeout": true
+    "/do-not-disturb": false
+    "/do-slideout": true
+    "/expire-timeout": 4
+    "/log-level": 0
+    "/log-level-apps": 0
+    "/log-max-size": 100
+    "/notification-log": true
+    "/notify-location": 2
+    "/primary-monitor": 0
+    "/theme": Default
