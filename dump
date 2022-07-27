@@ -85,7 +85,8 @@ channels.each do |channel|
     props.reject! { |k, v| defaults[k] == v } if defaults
     props.reject! { |k, v| ('/' + channel + k).start_with?(*$ignore) }
     next if props.empty?
-    $settings[channel] = props.sort.to_h
+    $settings[channel] ||= {}
+    $settings[channel].merge!(props.sort.to_h)
   end
 end
 
