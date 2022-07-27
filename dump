@@ -35,9 +35,15 @@ raise "Couldn't find defaults" unless $prefix
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
 $defaults = YAML.load(File.read($prefix + '/share/xfconf-helper/defaults.yml'))
 
-$settings = {}
-$shortcuts = { 'commands' => {}, 'wm' => {} }
-$panels = []
+$data = {
+  'shortcuts' => { 'commands' => {}, 'wm' => {} },
+  'settings' => {},
+  'panels' => [],
+}
+
+$shortcuts = $data['shortcuts']
+$settings = $data['settings']
+$panels = $data['panels']
 
 channels = $xfconf.ListChannels()
 
@@ -87,9 +93,4 @@ channels.each do |channel|
   end
 end
 
-config = {
-  'shortcuts' => $shortcuts,
-  'settings' => $settings,
-  'panels' => $panels,
-}
-puts YAML.dump(config)
+puts YAML.dump($data)
