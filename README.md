@@ -80,6 +80,14 @@ xfconf-dump > config.yml
 
 Known defaults will be skipped in order to better visualize the actual configuration.
 
+If you want to see a diff, you can specify the original config to minimize the
+differences.
+
+```sh
+xfconf-dump original-config.yml > new-config.yml
+diff -u original-config.yml new-config.yml
+```
+
 ## Prerequisites
 
 To use you will need `ruby` and the `ruby-dbus` gem, which you can install with:
