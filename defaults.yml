@@ -214,7 +214,7 @@ settings:
     "/Default/Numlock": false
   xfce4-power-manager:
     "/xfce4-power-manager/brightness-switch": 0
-    "/xfce4-power-manager/brightness-switch-restore-on-exit": 1
+    "/xfce4-power-manager/brightness-switch-restore-on-exit": 0
     "/xfce4-power-manager/show-tray-icon": false
     "/xfce4-power-manager/battery-button-action": 0
     "/xfce4-power-manager/critical-power-action": 0
@@ -228,6 +228,7 @@ settings:
     "/xfce4-power-manager/lock-screen-suspend-hibernate": true
     "/xfce4-power-manager/power-button-action": 0
     "/xfce4-power-manager/sleep-button-action": 0
+    "/xfce4-power-manager/presentation-mode": false
   xfce4-notifyd:
     "/applications/muted_applications": []
     "/do-fadeout": true
