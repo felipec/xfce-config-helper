@@ -88,8 +88,6 @@ To use you will need `ruby` and the `ruby-dbus` gem, which you can install with:
 gem install ruby-dbus
 ```
 
-*Note*: right now `ruby-dbus` has a bug, so you need to manually install `rexml` as well.
-
 ## Install
 
 Simply run `make install` (and make sure `~/.local/bin` is in your `$PATH`).
