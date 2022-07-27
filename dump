@@ -64,7 +64,7 @@ channels.each do |channel|
   when 'xfce4-panel'
     panels = Hash.new { |h,k| h[k] = Hash.new }
     plugins = Hash.new { |h,k| h[k] = Array.new }
-    props.each do |k, v|
+    props.sort.each do |k, v|
       case k
       when %r{^/panels/panel-(\d+)/(.+)$}
         panels[$1.to_i][$2] = v
