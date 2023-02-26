@@ -88,38 +88,37 @@ shortcuts:
 
 settings:
   xsettings:
-    "/Gdk/WindowScalingFactor": 1
-    "/Gtk/ButtonImages": true
+    "/Net/ThemeName": Adwaita
+    "/Net/IconThemeName": Adwaita
+    "/Net/DoubleClickTime": 400
+    "/Net/DoubleClickDistance": 5
+    "/Net/DndDragThreshold": 8
+    "/Net/CursorBlink": true
+    "/Net/CursorBlinkTime": 1200
+    "/Net/SoundThemeName": default
+    "/Net/EnableEventSounds": false
+    "/Net/EnableInputFeedbackSounds": false
+    "/Xft/Antialias": 1
+    "/Xft/Hinting": -1
+    "/Xft/HintStyle": hintfull
+    "/Xft/RGBA": none
     "/Gtk/CanChangeAccels": false
-    "/Gtk/ColorPalette": black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger
-      blue:pink:light green:gray10:gray30:gray75:gray90
+    "/Gtk/ColorPalette": black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90
+    "/Gtk/FontName": Sans 10
+    "/Gtk/MonospaceFontName": Monospace 10
+    "/Gtk/IconSizes": ''
+    "/Gtk/KeyThemeName": ''
+    "/Gtk/ToolbarStyle": icons
+    "/Gtk/ToolbarIconSize": 3
+    "/Gtk/MenuImages": true
+    "/Gtk/ButtonImages": true
+    "/Gtk/MenuBarAccel": F10
     "/Gtk/CursorThemeName": ''
     "/Gtk/CursorThemeSize": 0
     "/Gtk/DecorationLayout": menu:minimize,maximize,close
     "/Gtk/DialogsUseHeader": true
-    "/Gtk/FontName": Sans 10
-    "/Gtk/IconSizes": ''
-    "/Gtk/KeyThemeName": ''
-    "/Gtk/MenuBarAccel": F10
-    "/Gtk/MenuImages": true
-    "/Gtk/MonospaceFontName": Monospace 10
     "/Gtk/TitlebarMiddleClick": lower
-    "/Gtk/ToolbarIconSize": 3
-    "/Gtk/ToolbarStyle": icons
-    "/Net/CursorBlink": true
-    "/Net/CursorBlinkTime": 1200
-    "/Net/DndDragThreshold": 8
-    "/Net/DoubleClickDistance": 5
-    "/Net/DoubleClickTime": 400
-    "/Net/EnableEventSounds": false
-    "/Net/EnableInputFeedbackSounds": false
-    "/Net/IconThemeName": Adwaita
-    "/Net/SoundThemeName": default
-    "/Net/ThemeName": Adwaita
-    "/Xft/Antialias": 1
-    "/Xft/HintStyle": hintfull
-    "/Xft/Hinting": -1
-    "/Xft/RGBA": none
+    "/Gdk/WindowScalingFactor": 1
   xfwm4:
     "/general/activate_action": bring
     "/general/borderless_maximize": true
