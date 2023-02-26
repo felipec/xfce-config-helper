@@ -23,6 +23,7 @@ shortcuts:
     "<Primary><Shift>Escape": xfce4-taskmanager
     "<Super>r": xfce4-appfinder -c
     "<Super>r/startup-notify": true
+    "<Alt><Super>s": orca
   wm:
     add_workspace: "<Alt>Insert"
     cancel: Escape
