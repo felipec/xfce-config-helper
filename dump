@@ -28,7 +28,7 @@ $ignore = %w[
   /thunar/last
 ]
 
-prefixes = [ '/usr', ENV['HOME'] + '/.local' ]
+prefixes = [ ENV['HOME'] + '/.local', '/usr' ]
 $prefix = prefixes.find { |e| File.exists?(e + '/share/xfconf-helper/defaults.yml') }
 raise "Couldn't find defaults" unless $prefix
 
