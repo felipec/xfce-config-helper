@@ -182,11 +182,11 @@ settings:
     "/general/title_alignment": center
     "/general/title_font": Sans Bold 9
     "/general/title_horizontal_offset": 0
+    "/general/titleless_maximize": false
     "/general/title_shadow_active": 'false'
     "/general/title_shadow_inactive": 'false'
     "/general/title_vertical_offset_active": 0
     "/general/title_vertical_offset_inactive": 0
-    "/general/titleless_maximize": false
     "/general/toggle_workspaces": false
     "/general/unredirect_overlays": true
     "/general/urgent_blink": false
@@ -201,7 +201,7 @@ settings:
     "/general/wrap_cycle": true
     "/general/wrap_layout": true
     "/general/wrap_resistance": 10
-    "/general/wrap_windows": true
+    "/general/wrap_windows": false
     "/general/wrap_workspaces": false
     "/general/zoom_desktop": true
     "/general/zoom_pointer": true
@@ -210,7 +210,7 @@ settings:
     "/general/LockCommand": ''
     "/general/SaveOnExit": true
     "/general/SessionName": Default
-    "/shutdown/LockScreen": true
+    "/shutdown/LockScreen": false
   keyboards:
     "/Default/Numlock": false
   xfce4-power-manager:
