@@ -215,7 +215,7 @@ settings:
     "/Default/Numlock": false
   xfce4-power-manager:
     "/xfce4-power-manager/brightness-switch": 0
-    "/xfce4-power-manager/brightness-switch-restore-on-exit": 0
+    "/xfce4-power-manager/brightness-switch-restore-on-exit": 1
     "/xfce4-power-manager/show-tray-icon": false
     "/xfce4-power-manager/battery-button-action": 0
     "/xfce4-power-manager/critical-power-action": 0
@@ -243,3 +243,4 @@ settings:
     "/notify-location": 2
     "/primary-monitor": 0
     "/theme": Default
+    "/log-max-size-enabled": true
