@@ -150,6 +150,10 @@ settings:
     "/general/full_width_title": true
     "/general/horiz_scroll_opacity": false
     "/general/inactive_opacity": 100
+    "/general/margin_bottom": 0
+    "/general/margin_left": 0
+    "/general/margin_right": 0
+    "/general/margin_top": 0
     "/general/maximized_offset": 0
     "/general/mousewheel_rollup": true
     "/general/move_opacity": 100
@@ -206,9 +210,13 @@ settings:
     "/general/zoom_desktop": true
     "/general/zoom_pointer": true
   xfce4-session:
+    "/chooser/AlwaysDisplay": false
+    "/compat/LaunchGNOME": false
+    "/compat/LaunchKDE": false
+    "/general/AutoSave": false
+    "/general/PromptOnLogout": true
     "/general/FailsafeSessionName": Failsafe
     "/general/LockCommand": ''
-    "/general/SaveOnExit": true
     "/general/SessionName": Default
     "/shutdown/LockScreen": false
   keyboards:
