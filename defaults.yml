@@ -89,7 +89,7 @@ shortcuts:
 settings:
   xsettings:
     "/Net/ThemeName": Adwaita
-    "/Net/IconThemeName": Adwaita
+    "/Net/IconThemeName": elementary
     "/Net/DoubleClickTime": 400
     "/Net/DoubleClickDistance": 5
     "/Net/DndDragThreshold": 8
@@ -117,7 +117,7 @@ settings:
     "/Gtk/CursorThemeName": ''
     "/Gtk/CursorThemeSize": 0
     "/Gtk/DecorationLayout": menu:minimize,maximize,close
-    "/Gtk/DialogsUseHeader": true
+    "/Gtk/DialogsUseHeader": false
     "/Gtk/TitlebarMiddleClick": lower
     "/Gdk/WindowScalingFactor": 1
   xfwm4:
