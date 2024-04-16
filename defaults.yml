@@ -205,7 +205,7 @@ settings:
     "/general/wrap_cycle": true
     "/general/wrap_layout": true
     "/general/wrap_resistance": 10
-    "/general/wrap_windows": false
+    "/general/wrap_windows": true
     "/general/wrap_workspaces": false
     "/general/zoom_desktop": true
     "/general/zoom_pointer": true
@@ -223,7 +223,7 @@ settings:
     "/Default/Numlock": false
   xfce4-power-manager:
     "/xfce4-power-manager/brightness-switch": 0
-    "/xfce4-power-manager/brightness-switch-restore-on-exit": 1
+    "/xfce4-power-manager/brightness-switch-restore-on-exit": 0
     "/xfce4-power-manager/show-tray-icon": false
     "/xfce4-power-manager/battery-button-action": 0
     "/xfce4-power-manager/critical-power-action": 0
