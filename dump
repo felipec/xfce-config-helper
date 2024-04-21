@@ -77,16 +77,19 @@ end
 
 prefixes = [ ENV['HOME'] + '/.local', '/usr' ]
 $prefix = prefixes.find { |e| File.exists?(e + '/share/xfconf-helper/defaults.yml') }
-raise "Couldn't find defaults" unless $prefix
 
-$defaults = YAML.load(File.read($prefix + '/share/xfconf-helper/defaults.yml'))
+if $prefix
+  $defaults = YAML.load(File.read($prefix + '/share/xfconf-helper/defaults.yml'))
 
-$data.each do |group,settings|
-  next if group == 'panels'
-  settings.each do |channel,props|
-    defaults = $defaults[group][channel]
-    props.reject! { |k,v| defaults[k] == v } if defaults
+  $data.each do |group,settings|
+    next if group == 'panels'
+    settings.each do |channel,props|
+      defaults = $defaults[group][channel]
+      props.reject! { |k,v| defaults[k] == v } if defaults
+    end
   end
+else
+  $stderr.puts "Couldn't find defaults"
 end
 
 puts YAML.dump($data)
