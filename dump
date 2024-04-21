@@ -23,12 +23,7 @@ $ignore = %w[
   /thunar/last
 ]
 
-prefixes = [ ENV['HOME'] + '/.local', '/usr' ]
-$prefix = prefixes.find { |e| File.exists?(e + '/share/xfconf-helper/defaults.yml') }
-raise "Couldn't find defaults" unless $prefix
-
 $xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
-$defaults = YAML.load(File.read($prefix + '/share/xfconf-helper/defaults.yml'))
 
 $data = ARGV[0] ? YAML.load(File.read(ARGV[0])) : {}
 
@@ -79,6 +74,12 @@ channels.each do |channel|
     $settings[channel].merge!(props.sort.to_h)
   end
 end
+
+prefixes = [ ENV['HOME'] + '/.local', '/usr' ]
+$prefix = prefixes.find { |e| File.exists?(e + '/share/xfconf-helper/defaults.yml') }
+raise "Couldn't find defaults" unless $prefix
+
+$defaults = YAML.load(File.read($prefix + '/share/xfconf-helper/defaults.yml'))
 
 $data.each do |group,settings|
   next if group == 'panels'
