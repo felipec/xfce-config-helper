@@ -10,11 +10,6 @@ rescue LoadError
 end
 
 $ignore = %w[
-  /xfce4-keyboard-shortcuts/commands/default
-  /xfce4-keyboard-shortcuts/commands/custom/override
-  /xfce4-keyboard-shortcuts/xfwm4/default
-  /xfce4-keyboard-shortcuts/xfwm4/custom/override
-  /xfce4-keyboard-shortcuts/providers
   /xfce4-session/sessions/Failsafe
   /xfce4-desktop/backdrop
   /xfce4-appfinder/actions
