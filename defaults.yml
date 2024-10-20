@@ -88,37 +88,37 @@ shortcuts:
 
 settings:
   xsettings:
-    "/Net/ThemeName": null
-    "/Net/IconThemeName": null
-    "/Net/DoubleClickTime": 400
-    "/Net/DoubleClickDistance": 5
-    "/Net/DndDragThreshold": 8
-    "/Net/CursorBlink": true
-    "/Net/CursorBlinkTime": 1200
-    "/Net/SoundThemeName": default
-    "/Net/EnableEventSounds": false
-    "/Net/EnableInputFeedbackSounds": false
-    "/Xft/Antialias": -1
-    "/Xft/Hinting": -1
-    "/Xft/HintStyle": hintnone
-    "/Xft/RGBA": none
+    "/Gdk/WindowScalingFactor": 1
+    "/Gtk/ButtonImages": true
     "/Gtk/CanChangeAccels": false
     "/Gtk/ColorPalette": black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90
-    "/Gtk/FontName": Sans 10
-    "/Gtk/MonospaceFontName": Monospace 10
-    "/Gtk/IconSizes": ''
-    "/Gtk/KeyThemeName": ''
-    "/Gtk/ToolbarStyle": icons
-    "/Gtk/ToolbarIconSize": 3
-    "/Gtk/MenuImages": true
-    "/Gtk/ButtonImages": true
-    "/Gtk/MenuBarAccel": F10
     "/Gtk/CursorThemeName": ''
     "/Gtk/CursorThemeSize": 0
     "/Gtk/DecorationLayout": menu:minimize,maximize,close
     "/Gtk/DialogsUseHeader": false
+    "/Gtk/FontName": Sans 10
+    "/Gtk/IconSizes": ''
+    "/Gtk/KeyThemeName": ''
+    "/Gtk/MenuBarAccel": F10
+    "/Gtk/MenuImages": true
+    "/Gtk/MonospaceFontName": Monospace 10
     "/Gtk/TitlebarMiddleClick": lower
-    "/Gdk/WindowScalingFactor": 1
+    "/Gtk/ToolbarIconSize": 3
+    "/Gtk/ToolbarStyle": icons
+    "/Net/CursorBlink": true
+    "/Net/CursorBlinkTime": 1200
+    "/Net/DndDragThreshold": 8
+    "/Net/DoubleClickDistance": 5
+    "/Net/DoubleClickTime": 400
+    "/Net/EnableEventSounds": false
+    "/Net/EnableInputFeedbackSounds": false
+    "/Net/IconThemeName": null
+    "/Net/SoundThemeName": default
+    "/Net/ThemeName": null
+    "/Xft/Antialias": -1
+    "/Xft/HintStyle": hintnone
+    "/Xft/Hinting": -1
+    "/Xft/RGBA": none
   xfwm4:
     "/general/activate_action": bring
     "/general/borderless_maximize": true
@@ -185,11 +185,11 @@ settings:
     "/general/title_alignment": center
     "/general/title_font": Sans Bold 9
     "/general/title_horizontal_offset": 0
-    "/general/titleless_maximize": false
     "/general/title_shadow_active": 'false'
     "/general/title_shadow_inactive": 'false'
     "/general/title_vertical_offset_active": 0
     "/general/title_vertical_offset_inactive": 0
+    "/general/titleless_maximize": false
     "/general/toggle_workspaces": false
     "/general/unredirect_overlays": true
     "/general/urgent_blink": false
@@ -213,63 +213,63 @@ settings:
     "/compat/LaunchGNOME": false
     "/compat/LaunchKDE": false
     "/general/AutoSave": false
-    "/general/PromptOnLogout": true
     "/general/FailsafeSessionName": Failsafe
+    "/general/PromptOnLogout": true
     "/general/SessionName": Default
-    "/shutdown/LockScreen": true
     "/security/EnableTcp": false
+    "/shutdown/LockScreen": true
   keyboards:
     "/Default/RestoreNumlock": false
   xfce4-power-manager:
-    "/xfce4-power-manager/brightness-switch": -1
-    "/xfce4-power-manager/brightness-switch-restore-on-exit": -1
-    "/xfce4-power-manager/show-tray-icon": false
     "/xfce4-power-manager/battery-button-action": 0
-    "/xfce4-power-manager/critical-power-action": 0
-    "/xfce4-power-manager/critical-power-level": 10
-    "/xfce4-power-manager/dpms-enabled": true
-    "/xfce4-power-manager/general-notification": false
-    "/xfce4-power-manager/handle-brightness-keys": true
-    "/xfce4-power-manager/hibernate-button-action": 0
-    "/xfce4-power-manager/inactivity-sleep-mode-on-ac": 1
-    "/xfce4-power-manager/inactivity-sleep-mode-on-battery": 2
-    "/xfce4-power-manager/lid-action-on-ac": 3
-    "/xfce4-power-manager/lid-action-on-battery": 3
-    "/xfce4-power-manager/lock-screen-suspend-hibernate": true
-    "/xfce4-power-manager/power-button-action": 0
-    "/xfce4-power-manager/sleep-button-action": 0
-    "/xfce4-power-manager/presentation-mode": false
     "/xfce4-power-manager/brightness-exponential": false
     "/xfce4-power-manager/brightness-level-on-ac": 80
     "/xfce4-power-manager/brightness-level-on-battery": 20
     "/xfce4-power-manager/brightness-on-ac": 9
     "/xfce4-power-manager/brightness-on-battery": 9
     "/xfce4-power-manager/brightness-step-count": 10
+    "/xfce4-power-manager/brightness-switch": -1
+    "/xfce4-power-manager/brightness-switch-restore-on-exit": -1
+    "/xfce4-power-manager/critical-power-action": 0
+    "/xfce4-power-manager/critical-power-level": 10
+    "/xfce4-power-manager/dpms-enabled": true
+    "/xfce4-power-manager/general-notification": false
+    "/xfce4-power-manager/handle-brightness-keys": true
+    "/xfce4-power-manager/hibernate-button-action": 0
     "/xfce4-power-manager/inactivity-on-ac": 14
     "/xfce4-power-manager/inactivity-on-battery": 14
+    "/xfce4-power-manager/inactivity-sleep-mode-on-ac": 1
+    "/xfce4-power-manager/inactivity-sleep-mode-on-battery": 2
+    "/xfce4-power-manager/lid-action-on-ac": 3
+    "/xfce4-power-manager/lid-action-on-battery": 3
+    "/xfce4-power-manager/lock-screen-suspend-hibernate": true
+    "/xfce4-power-manager/power-button-action": 0
+    "/xfce4-power-manager/presentation-mode": false
+    "/xfce4-power-manager/show-tray-icon": false
+    "/xfce4-power-manager/sleep-button-action": 0
   xfce4-notifyd:
+    "/date-time-custom-format": "%a %H:%M:%S"
+    "/date-time-format": locale-default
     "/do-fadeout": true
     "/do-not-disturb": false
     "/do-slideout": false
     "/expire-timeout": 10
-    "/log-level": not-fully-shown
-    "/log-level-apps": all
-    "/log-max-size": 1000
-    "/notification-log": false
-    "/notify-location": top-right
-    "/theme": Default
-    "/log-max-size-enabled": true
-    "/date-time-custom-format": "%a %H:%M:%S"
-    "/date-time-format": locale-default
     "/expire-timeout-allow-override": true
     "/expire-timeout-enabled": true
     "/gauge-ignores-dnd": true
+    "/initial-opacity": 0.9
+    "/log-level": not-fully-shown
+    "/log-level-apps": all
+    "/log-max-size": 1000
+    "/log-max-size-enabled": true
     "/min-width": 150
     "/min-width-enabled": false
     "/mute-sounds": false
     "/notification-display-fields": full
+    "/notification-log": false
+    "/notify-location": top-right
     "/show-notifications-on": active-monitor
     "/show-text-with-gauge": false
-    "/initial-opacity": 0.9
+    "/theme": Default
   xfce4-screensaver:
     "/lock/sleep-activation": true
