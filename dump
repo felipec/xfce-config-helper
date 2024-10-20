@@ -76,7 +76,7 @@ channels.each do |channel|
 end
 
 prefixes = [ Dir.home + '/.local', '/usr' ]
-$prefix = prefixes.find { |e| File.exists?(e + '/share/xfconf-helper/defaults.yml') }
+$prefix = prefixes.find { |e| File.exist?(e + '/share/xfconf-helper/defaults.yml') }
 
 if $prefix
   $defaults = YAML.load(File.read($prefix + '/share/xfconf-helper/defaults.yml'))
