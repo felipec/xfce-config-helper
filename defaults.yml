@@ -98,7 +98,6 @@ settings:
     "/Net/SoundThemeName": default
     "/Net/EnableEventSounds": false
     "/Net/EnableInputFeedbackSounds": false
-    "/Xft/DPI": null
     "/Xft/Antialias": -1
     "/Xft/Hinting": -1
     "/Xft/HintStyle": hintnone
@@ -205,7 +204,7 @@ settings:
     "/general/wrap_cycle": true
     "/general/wrap_layout": true
     "/general/wrap_resistance": 10
-    "/general/wrap_windows": false
+    "/general/wrap_windows": true
     "/general/wrap_workspaces": false
     "/general/zoom_desktop": true
     "/general/zoom_pointer": true
@@ -216,39 +215,61 @@ settings:
     "/general/AutoSave": false
     "/general/PromptOnLogout": true
     "/general/FailsafeSessionName": Failsafe
-    "/general/LockCommand": ''
     "/general/SessionName": Default
-    "/shutdown/LockScreen": false
+    "/shutdown/LockScreen": true
+    "/security/EnableTcp": false
   keyboards:
-    "/Default/Numlock": false
+    "/Default/RestoreNumlock": false
   xfce4-power-manager:
-    "/xfce4-power-manager/brightness-switch": 0
-    "/xfce4-power-manager/brightness-switch-restore-on-exit": 1
+    "/xfce4-power-manager/brightness-switch": -1
+    "/xfce4-power-manager/brightness-switch-restore-on-exit": -1
     "/xfce4-power-manager/show-tray-icon": false
     "/xfce4-power-manager/battery-button-action": 0
     "/xfce4-power-manager/critical-power-action": 0
     "/xfce4-power-manager/critical-power-level": 10
     "/xfce4-power-manager/dpms-enabled": true
     "/xfce4-power-manager/general-notification": false
-    "/xfce4-power-manager/handle-brightness-keys": false
+    "/xfce4-power-manager/handle-brightness-keys": true
     "/xfce4-power-manager/hibernate-button-action": 0
     "/xfce4-power-manager/inactivity-sleep-mode-on-ac": 1
     "/xfce4-power-manager/inactivity-sleep-mode-on-battery": 2
+    "/xfce4-power-manager/lid-action-on-ac": 3
+    "/xfce4-power-manager/lid-action-on-battery": 3
     "/xfce4-power-manager/lock-screen-suspend-hibernate": true
     "/xfce4-power-manager/power-button-action": 0
     "/xfce4-power-manager/sleep-button-action": 0
     "/xfce4-power-manager/presentation-mode": false
+    "/xfce4-power-manager/brightness-exponential": false
+    "/xfce4-power-manager/brightness-level-on-ac": 80
+    "/xfce4-power-manager/brightness-level-on-battery": 20
+    "/xfce4-power-manager/brightness-on-ac": 9
+    "/xfce4-power-manager/brightness-on-battery": 9
+    "/xfce4-power-manager/brightness-step-count": 10
+    "/xfce4-power-manager/inactivity-on-ac": 14
+    "/xfce4-power-manager/inactivity-on-battery": 14
   xfce4-notifyd:
-    "/applications/muted_applications": []
     "/do-fadeout": true
     "/do-not-disturb": false
-    "/do-slideout": true
-    "/expire-timeout": 4
-    "/log-level": 0
-    "/log-level-apps": 0
-    "/log-max-size": 100
-    "/notification-log": true
-    "/notify-location": 2
-    "/primary-monitor": 0
+    "/do-slideout": false
+    "/expire-timeout": 10
+    "/log-level": not-fully-shown
+    "/log-level-apps": all
+    "/log-max-size": 1000
+    "/notification-log": false
+    "/notify-location": top-right
     "/theme": Default
     "/log-max-size-enabled": true
+    "/date-time-custom-format": "%a %H:%M:%S"
+    "/date-time-format": locale-default
+    "/expire-timeout-allow-override": true
+    "/expire-timeout-enabled": true
+    "/gauge-ignores-dnd": true
+    "/min-width": 150
+    "/min-width-enabled": false
+    "/mute-sounds": false
+    "/notification-display-fields": full
+    "/show-notifications-on": active-monitor
+    "/show-text-with-gauge": false
+    "/initial-opacity": 0.9
+  xfce4-screensaver:
+    "/lock/sleep-activation": true
