@@ -13,7 +13,7 @@ settings:
     "/general/easy_click": Super
     "/general/cycle_tabwin_mode": 1
   xfce4-session:
-    "/general/SaveOnExit": false
+    "/general/PromptOnLogout": false
   xfce4-desktop:
     "/desktop-icons/style": 0
 panels:

@@ -14,11 +14,9 @@ shortcuts:
 settings:
   xfwm4:
     "/general/easy_click": Super
-    "/general/cycle_tabwin_mode": 0
     "/general/cycle_preview": false
   xfce4-session:
-    "/general/SaveOnExit": false
-    "/compat/LaunchGNOME": true
+    "/general/PromptOnLogout": false
   xfce4-desktop:
     "/desktop-icons/style": 0
   xfce4-panel:
