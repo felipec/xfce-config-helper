@@ -51,7 +51,7 @@ settings:
   xfwm4:
     "/general/easy_click": Super
   xfce4-session:
-    "/general/SaveOnExit": false
+    "/general/PromptOnLogout": false
   xfce4-desktop:
     "/desktop-icons/style": 0
 panels:
